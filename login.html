@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akses Orang Tua - MI Asy-Syarifiyah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h2>📖 Akses Nilai & Absensi Siswa</h2>
+    <input type="text" id="nisInput" placeholder="Masukkan NIS siswa" />
+    <button onclick="cariSiswa()">Lihat Data</button>
+
+    <div id="hasil"></div>
+  </div>
+
+  <script>
+    function cariSiswa() {
+      const nis = document.getElementById("nisInput").value.trim();
+      if (!nis) return alert("Masukkan NIS terlebih dahulu!");
+
+      const url = "https://script.google.com/macros/s/AKfycbz0BQ3LubOjxLxj-gekgdCX0Ngt7nDajLsajW36TmRbwYmysmwdBx4tuEgNspA-Jm9M_A/exec?nis=" + nis;
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          if (data.status === "sukses") {
+            document.getElementById("hasil").innerHTML = `
+              <div class="card">
+                <h3>📋 Data Siswa</h3>
+                <p><strong>Nama:</strong> ${data.nama}</p>
+                <p><strong>Kelas:</strong> ${data.kelas}</p>
+
+                <h4>📚 Nilai</h4>
+                <ul>
+                  <li>Matematika: ${data.mtk}</li>
+                  <li>IPA: ${data.ipa}</li>
+                  <li>Bahasa Indonesia: ${data.bindo}</li>
+                  <li>SKI: ${data.ski}</li>
+                  <li>Fiqih: ${data.fiqih}</li>
+                  <li>Akidah Akhlak: ${data.akidah}</li>
+                  <li>Al-Qur'an Hadist: ${data.qurdis}</li>
+                  <li>BTQ: ${data.btq}</li>
+                  <li>Ekstrakurikuler: ${data.eskul}</li>
+                </ul>
+
+                <h4>📅 Absensi</h4>
+                <ul>
+                  <li>Hadir: ${parseInt(data.hadir) || 0} hari</li>
+                  <li>Izin: ${parseInt(data.izin) || 0} hari</li>
+                  <li>Sakit: ${parseInt(data.sakit) || 0} hari</li>
+                  <li>Tanpa Keterangan: ${parseInt(data.alpha) || 0} hari</li>
+                </ul>
+
+                <h4>📢 Pengumuman</h4>
+                <p>${data.pengumuman}</p>
+              </div>
+            `;
+          } else {
+            document.getElementById("hasil").innerHTML = "<p>❌ Data tidak ditemukan.</p>";
+          }
+        })
+        .catch(err => {
+          document.getElementById("hasil").innerHTML = "<p>⚠️ Terjadi kesalahan saat mengambil data.</p>";
+          console.error(err);
+        });
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .card {
+      background-color: #e8f5e9;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akademik - MI Asy-Syarifiyah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="topbar">
+    <a href="#" class="logo">MI ASY-SYARIFIYAH</a>
+    <nav class="nav">
+      <a href="index.html">Beranda</a>
+      <a href="#pendaftaran">Pendaftaran</a>
+      <a href="#">Akademik</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- Halaman Akademik -->
+  <section class="akademik">
+    <h1>Akademik</h1>
+    <p class="intro">
+      MI Asy-Syarifiyah menyelenggarakan pendidikan berbasis kurikulum nasional dan pendidikan agama Islam yang terpadu. Fokus kami adalah membentuk siswa yang cerdas, disiplin, dan berakhlak mulia.
+    </p>
+
+    <div class="jenjang-container">
+
+      <div class="jenjang">
+        <h2>TK / PAUD</h2>
+        <p>Pembelajaran awal anak usia dini untuk mengenalkan nilai Islam, kemandirian, dan keterampilan dasar melalui pendekatan bermain sambil belajar.</p>
+      </div>
+
+      <div class="jenjang">
+        <h2>SD (Madrasah Ibtidaiyah)</h2>
+        <p>Penguatan dasar-dasar akademik seperti Matematika, Bahasa Indonesia, dan IPA, dilengkapi dengan Tahfidz, Fiqih, dan Akhlak untuk membentuk karakter Islami.</p>
+      </div>
+
+      <div class="jenjang">
+        <h2>SMP / Pesantren</h2>
+        <p>Pendidikan lanjutan yang menggabungkan ilmu umum dan diniyah. Siswa tinggal di pesantren untuk mendapatkan penguatan karakter, kemandirian, dan pembelajaran kitab kuning.</p>
+      </div>
+
+      <div class="jenjang">
+        <h2>Sekolah Agama</h2>
+        <p>Fokus pada pendalaman ilmu agama seperti tafsir, hadis, fiqih, dan ushul fiqih. Cocok bagi sekolah SD atau SMP yang ingin memperdalam ilmu keislaman secara intensif yang tidak di ajarkan disekolah(biasanya sekolah negri) <br><strong>*tapi sekolah agama ini tidak ada pendaftaran online</strong>.</p>
+      </div>
+
+    </div>
+
+    <div class="fasilitas">
+      <h2>Fasilitas Penunjang Akademik</h2>
+      <ul>
+        <li>Ruang kelas nyaman </li>
+        <li>Perpustakaan dan Laboratorium Sains</li>
+        <li>Program Tahfidz Al-Qur'an</li>
+        <li>Kegiatan Ekstrakurikuler: Pramuka, Marawis, Komputer</li>
+        <li>Asrama putra & putri (untuk jenjang pesantren)</li>
+        <li>adanya ruang lab komputer yang nyaman dan ber ac</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CSS di bawah HTML -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .topbar {
+      background-color: #3daa4b;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    .akademik {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .akademik h1 {
+      text-align: center;
+      color: #2f7c39;
+      font-size: 2.5rem;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .jenjang-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .jenjang {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .jenjang h2 {
+      color: #189e4e;
+      font-size: 1.2rem;
+    }
+
+    .jenjang p {
+      font-size: 0.95rem;
+    }
+
+    .fasilitas {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .fasilitas h2 {
+      text-align: center;
+      color: #3d8a47;
+    }
+
+    .fasilitas ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .fasilitas li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .jenjang-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+</body>
+</html>
